@@ -29,7 +29,7 @@ jobs:
           echo "\`\`\`" >> report.md
           
       - name: Upload Report Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: runner-health-report
           path: report.md
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Install pandoc for Markdown
       run: |
