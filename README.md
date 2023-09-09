@@ -6,11 +6,8 @@ This repository contains a collection of standalone Proof of Concept GitHub Acti
 
 - **my-action.yml**: This is a standalone GitHub Action YAML file that demonstrates a specific concept. You can use it as a template for similar actions or as a reference.
 
-- **my-action.json**: This JSON file is related to `my-action.yml`. It contains configuration data or inputs that can be used by the corresponding YAML file.
+- **my-action.<extension>**: This JSON file is related to `my-action.yml`. It contains configuration data or inputs, or is related in someway that can be used by the corresponding YAML file.
 
-- **another-action.yml**: Similar to `my-action.yml`, this YAML file showcases another concept or use case.
-
-- **another-action.js**: This JS file is related to `another-action.yml` and provides configuration data specific to that action.
 
 ## How to Use
 
