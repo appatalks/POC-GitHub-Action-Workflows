@@ -29,7 +29,7 @@ jobs:
           echo "\`\`\`" >> report.md
           
       - name: Upload Report Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: runner-health-report
           path: report.md
