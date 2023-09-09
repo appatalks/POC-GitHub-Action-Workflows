@@ -1,0 +1,21 @@
+name: Upload Arifact Example
+on:
+  workflow_dispatch:
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: get_hosts_debug
+        id: get_hosts_debug
+        run: |
+          sed '/^\s*#/d; /^\s*$/d' /etc/hosts
+          sed '/^\s*#/d; /^\s*$/d' /etc/hosts > /tmp/gh_actions_run.md
+          
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: gh_actions_run.md
+          path: /tmp/gh_actions_run.md
+          # retention-days: 42
