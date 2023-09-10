@@ -1,12 +1,14 @@
 name: Hello World
   
 on:
-  issues:
-    types: [opened, edited]
+  # issues:
+  #  types: [opened, edited]
+  workflow_dispatch:
 
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: hello_world
         id: hello_world
