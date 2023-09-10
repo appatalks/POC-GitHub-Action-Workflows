@@ -1,4 +1,11 @@
 # https://learn.microsoft.com/en-us/training/modules/github-actions-cd/2-deploy-azure
+# https://docs.github.com/en/actions/learn-github-actions/expressions
+# Status Check Functions:
+#   if: ${{ success() }}
+#   if: ${{ always() }}
+#   if: ${{ !cancelled() }}
+#   if: ${{ cancelled() }}
+#   if: ${{ failure() }}   
 
 name: Using Steps Example
 on:
@@ -30,10 +37,12 @@ jobs:
       if: success()
       run: |
           aws sts get-caller-identity
+          
     - name: Get Runner Date
       if: success()
       run: |
           date
+          
     - name: Grab Runner IP
       if: success()
       run: |
