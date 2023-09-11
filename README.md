@@ -9,26 +9,6 @@ This repository contains a collection of standalone Proof of Concept GitHub Acti
 - **my-action.`<extension>`**: These similarly named files are related to `my-action.yml`. It contains configuration data or inputs, or is related in someway that can be used by the corresponding YAML file.
 
 
-## How to Use
-
-To run these Proof of Concept GitHub Actions, follow these steps:
-
-1. Click on the YAML file you are interested in.
-
-2. Click the "Raw" button to view the raw content of the file.
-
-3. Copy the entire content.
-
-4. Create or navigate to your GitHub repository where you want to use the action.
-
-5. Create a new GitHub Actions workflow file (e.g., `.github/workflows/my-workflow.yml`) or edit an existing one.
-
-6. Paste the copied content into your workflow file.
-
-7. Customize the action as needed by modifying the YAML configuration.
-
-8. Commit and push your changes to trigger the workflow.
-
 ## Notes
 
 - Make sure to review and adjust the configurations in these YAML files to fit your specific project requirements.
