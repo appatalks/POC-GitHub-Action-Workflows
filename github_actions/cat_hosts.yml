@@ -1,3 +1,5 @@
+# Permissions https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+
 name: Get-Hosts-file
   
 on:
