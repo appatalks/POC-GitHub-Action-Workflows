@@ -33,7 +33,7 @@ on:
         - curl -s https://icanhazip.com/
         - echo "Running Custom Script"
       customRun:
-        description: 'Run Something Custom'
+        description: 'CAREFUL / Run Something Custom / CAREFUL'
         required: false
         default: 'date'
         type: string
