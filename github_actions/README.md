@@ -1,1 +1,5 @@
 - [cat_hosts.yml](cat_hosts.yml) - Cat the runner's /etc/hosts file
+- [close_pull_request.yml](close_pull_request.yml)
+- [context_testing.yml](context_testing.yml)
+- [get_gh_event_from_workflow.yml](get_gh_event_from_workflow.yml)
+- [greetings_actions_first.yml](greetings_actions_first.yml)
