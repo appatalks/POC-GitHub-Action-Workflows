@@ -1,13 +1,13 @@
 - [cat_hosts.yml](cat_hosts.yml) - Cat the runner's /etc/hosts file
-- [close_pull_request.yml](close_pull_request.yml)
-- [context_testing.yml](context_testing.yml)
-- [get_gh_event_from_workflow.yml](get_gh_event_from_workflow.yml)
-- [greetings_actions_first.yml](greetings_actions_first.yml)
-- [hello_world.yml](hello_world.yml)
-- [inputs_custom_script.yml](inputs_custom_script.yml)
-- [markdown_step_summary.yml](markdown_step_summary.yml)
-- [multi_jobs.yml](multi_jobs.yml)
-- [octocat_rest.yml](octocat_rest.yml)
+- [close_pull_request.yml](close_pull_request.yml) - Auto close a pull request No Merge
+- [context_testing.yml](context_testing.yml) - Dump out all of GitHub's Contexts
+- [get_gh_event_from_workflow.yml](get_gh_event_from_workflow.yml) - If a certain workflow runs, get it's events/payload
+- [greetings_actions_first.yml](greetings_actions_first.yml) - Auto response to a pull request or issue
+- [hello_world.yml](hello_world.yml) - Simple Hello world action
+- [inputs_custom_script.yml](inputs_custom_script.yml) - Use inputs to use elsewhere in the action
+- [markdown_step_summary.yml](markdown_step_summary.yml) - Create a markdown summary for copy/pasta
+- [multi_jobs.yml](multi_jobs.yml) - Example of using multiple jobs
+- [octocat_rest.yml](octocat_rest.yml) - 
 - [oidc_github_aws.yml](oidc_github_aws.yml)
 - [scheduled_issue.yml](scheduled_issue.yml)
 - [test_ip.yml](test_ip.yml)
