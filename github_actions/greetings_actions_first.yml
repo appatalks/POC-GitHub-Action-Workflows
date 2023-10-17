@@ -1,3 +1,6 @@
+# Avoid using pull_request_target if the workflow doesn’t need write repository permissions
+# https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+
 name: Greetings
 
 on: [pull_request_target, issues]
