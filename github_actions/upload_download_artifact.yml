@@ -29,11 +29,17 @@ jobs:
           echo "\`\`\`" >> report.md
           
       - name: Upload Report Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: runner-health-report
           path: report.md
           # retention-days: 42
+
+      # For use with Self-Hosted Runners    
+      # - name: Upload logs
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    path: <path_to_runner_installation>/_diag/*.log    
 
       - name: If Success
         if: success()
