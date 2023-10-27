@@ -15,3 +15,4 @@
 - [upload_download_artifact.yml](upload_download_artifact.yml) - Upload an artifact and download it to different runner
 - [url_health_check.yml](url_health_check.yml) - Monitor URL health and create issue if non 200 with screenshot
 - [using_steps.yml](using_steps.yml) - Multiple Steps example
+- [list_repo_languages.yml](list_repo_languages.yml) - List the Repo's Languages by percentage
