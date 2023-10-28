@@ -1,3 +1,5 @@
+# Working on adding ability to run against many URLs. Updates to come soon!
+
 name: List Repository Languages
 on:
   workflow_dispatch:
