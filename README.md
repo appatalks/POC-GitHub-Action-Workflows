@@ -1,4 +1,4 @@
-# Proof of Concept GitHub Actions
+# Proof of Concept GitHub Action Workflows
 
 This repository contains a collection of standalone Proof of Concept GitHub Actions YAML (.yml) files. These actions are designed to demonstrate various concepts and can be used as starting points for building more complex workflows. Below is an overview of the files and their relationships:
 
