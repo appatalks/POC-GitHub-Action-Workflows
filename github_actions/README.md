@@ -19,3 +19,4 @@
 - [list_branch_languages.yml](list_branch_languages.yml) - Uses ```github-linguist --breakdown``` to iterate through each branch
 - [secret_scanning_check.yml](secret_scanning_check.yml) - Add a GH Secrets Scanning Check to your PRs! No, Seriously do Itz!
 - [org_repo_protected_tag_discovery.yml](org_repo_protected_tag_discovery.yml) - Run an Org wide discovery for Protected Tags using [secrets.PATLANG](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
+- [test_action_endpoints.yml](test_action_endpoints.yml) - Use this to test various endpoints that Actions may use.
