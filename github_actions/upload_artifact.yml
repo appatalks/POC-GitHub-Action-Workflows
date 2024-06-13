@@ -14,6 +14,7 @@ jobs:
       run: |
         echo "### Endpoint Test Results" > /tmp/gh_actions_run_${{ matrix.runs }}.md
         for url in \
+          "https://vstsagenttools.blob.core.windows.net/" \
           "https://pipelinesghubeus9.actions.githubusercontent.com" \
           "https://productionresultssa0.blob.core.windows.net/" \
           "https://productionresultssa15.blob.core.windows.net/" \
