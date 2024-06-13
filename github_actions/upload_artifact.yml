@@ -1,4 +1,4 @@
-name: 00 Curl Test for Actions Endpoints
+name: Curl Test for Actions Endpoints
 
 on:
   workflow_dispatch:
@@ -15,6 +15,8 @@ jobs:
         echo "### Endpoint Test Results" > /tmp/gh_actions_run_${{ matrix.runs }}.md
         for url in \
           "https://pipelinesghubeus9.actions.githubusercontent.com" \
+          "https://productionresultssa0.blob.core.windows.net/" \
+          "https://productionresultssa15.blob.core.windows.net/" \
           "https://pipelinesghubeus.actions.githubusercontent.com" \
           "https://acghubeus0.actions.githubusercontent.com/_apis/health" \
           "https://results-receiver.actions.githubusercontent.com" \
@@ -22,9 +24,7 @@ jobs:
           "https://vstoken.actions.githubusercontent.com/_apis/health" \
           "https://pipelines.actions.githubusercontent.com/_apis/health" \
           "https://actions-results-receiver-production.githubapp.com/health" \
-          "https://results-receiver.actions.githubusercontent.com/health" \
-          "https://productionresultssa0.blob.core.windows.net/" \
-          "https://productionresultssa15.blob.core.windows.net/"
+          "https://results-receiver.actions.githubusercontent.com/health"
         do
           # echo "" >> /tmp/gh_actions_run_${{ matrix.runs }}.md
           start_time=$(date +%s%3N)
@@ -32,7 +32,7 @@ jobs:
           end_time=$(date +%s%3N)
           elapsed=$((end_time - start_time))
           if [ $? -eq 0 ]; then
-            echo "Connection to $url was successful. ${elapsed} ms" >> /tmp/gh_actions_run_${{ matrix.runs }}.md
+            echo "${elapsed} ms - Connection to $url was successful." >> /tmp/gh_actions_run_${{ matrix.runs }}.md
           else
             echo "Connection to $url timed out or failed. Time taken: ${elapsed} ms" >> /tmp/gh_actions_run_${{ matrix.runs }}.md
           fi
@@ -76,4 +76,3 @@ jobs:
       with:
         name: combined_gh_actions_run
         path: /tmp/combined_gh_actions_run.md
-        # retention-days: 42
