@@ -5,7 +5,8 @@ on:
 
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -59,7 +60,7 @@ jobs:
         run: |
           python --version
           git --version
-          sudo du -hsx /home/runner/work/cache/cache
+          sudo du -hsx ~/actions-runner/_work/cache/cache
           sudo du -hsx ~/.cache/pip
           ls -la ~/.cache/depends
           cat ~/.cache/depends/home.txt
