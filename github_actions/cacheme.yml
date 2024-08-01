@@ -1,0 +1,56 @@
+name: Cache dependencies poc
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Cache pip packages
+        id: cache-pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/requirements-dev.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        if: steps.cache-pip.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install --upgrade pip
+          sudo apt install git -y
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "No requirements.txt found"; fi
+
+      # - name: Cache apt packages
+      #  id: cache-apt
+      #  uses: actions/cache@v3
+      #  with:
+      #    path: /usr/local/lib
+      #    key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }}
+      #    restore-keys: |
+      #      ${{ runner.os }}-apt-
+
+      - name: Install apt dependencies
+        if: steps.cache-apt.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          if [ -f apt-packages.txt ]; then xargs sudo apt-get install -y < apt-packages.txt; else echo "No apt-packages.txt found"; fi
+
+      - name: Verify installation
+        run: |
+          python --version
+          git --version
+          sudo du -hsx /home/runner/work/cache/cache
+          # sudo du -hsx /usr/local/lib
+          sudo du -hsx ~/.cache/pip
