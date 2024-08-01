@@ -1,4 +1,4 @@
-name: Cache dependencies poc
+name: Cache Common Dependencies
 
 on:
   workflow_dispatch:
@@ -32,17 +32,25 @@ jobs:
           sudo apt install git -y
           if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "No requirements.txt found"; fi
 
-      # - name: Cache apt packages
-      #  id: cache-apt
-      #  uses: actions/cache@v3
-      #  with:
-      #    path: /usr/local/lib
-      #    key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }}
-      #    restore-keys: |
-      #      ${{ runner.os }}-apt-
+      - name: Setup home directory for caching
+        run: |
+          mkdir -p ~/.cache/depends
 
+      - name: Cache home.txt
+        id: cache-home
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/depends/home.txt
+          key: ${{ runner.os }}-home-${{ hashFiles('**/home.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-home-
+
+      - name: Retrieve home assets
+        if: steps.cache-home.outputs.cache-hit != 'true'
+        run: |
+          echo "hello world!" > ~/.cache/depends/home.txt
+          
       - name: Install apt dependencies
-        if: steps.cache-apt.outputs.cache-hit != 'true'
         run: |
           sudo apt-get update
           if [ -f apt-packages.txt ]; then xargs sudo apt-get install -y < apt-packages.txt; else echo "No apt-packages.txt found"; fi
@@ -52,5 +60,6 @@ jobs:
           python --version
           git --version
           sudo du -hsx /home/runner/work/cache/cache
-          # sudo du -hsx /usr/local/lib
           sudo du -hsx ~/.cache/pip
+          ls -la ~/.cache/depends
+          cat ~/.cache/depends/home.txt
